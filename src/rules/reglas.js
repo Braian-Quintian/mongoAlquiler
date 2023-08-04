@@ -2,7 +2,7 @@ import rateLimit from 'express-rate-limit';
 
 export let limitGet = () => {
     return rateLimit({
-        windowMs: 60 * 1000, // 60 seconds
+        windowMs: 15 * 60 * 1000, // 15 minutes
         max: 10, // 10 requests,
         standardHeaders: true, // Return rate limit info in the RateLimit- headers
         legacyHeaders: false, // Disable the 'X-RateLimit' legacy header
