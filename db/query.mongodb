@@ -1,0 +1,392 @@
+use("db_endpoints_alquiler");
+db.Cliente.insertMany([
+    {
+        id: 1,
+        Nombre: "Juan",
+        Apellido: "Perez",
+        DNI: "12345678",
+        Direccion: "Calle 123",
+        Telefono: "11111111",
+        Email: "juan@example.com"
+    },
+    {
+        id: 2,
+        Nombre: "Maria",
+        Apellido: "Lopez",
+        DNI: "87654321",
+        Direccion: "Avenida 456",
+        Telefono: "22222222",
+        Email: "maria@example.com"
+    },
+    {
+        id: 3,
+        Nombre: "Carlos",
+        Apellido: "Gómez",
+        DNI: "56789012",
+        Direccion: "Plaza 789",
+        Telefono: "33333333",
+        Email: "carlos@example.com"
+    },
+    {
+        id: 4,
+        Nombre: "Ana",
+        Apellido: "Martínez",
+        DNI: "34567890",
+        Direccion: "Calle 456",
+        Telefono: "44444444",
+        Email: "ana@example.com"
+    },
+    {
+        id: 5,
+        Nombre: "Pedro",
+        Apellido: "González",
+        DNI: "67890123",
+        Direccion: "Avenida 789",
+        Telefono: "55555555",
+        Email: "pedro@example.com"
+    }
+]);
+
+db.Automovil.insertMany([
+    {
+        id_: 1,
+        Marca: "Toyota",
+        Modelo: "Corolla",
+        Anio: 2021,
+        Tipo: "Sedan",
+        Capacidad: 5,
+        Precio_Diario: 50.00
+    },
+    {
+        id_: 2,
+        Marca: "Honda",
+        Modelo: "Civic",
+        Anio: 2020,
+        Tipo: "Sedan",
+        Capacidad: 5,
+        Precio_Diario: 45.00
+    },
+    {
+        id_: 3,
+        Marca: "Ford",
+        Modelo: "Mustang",
+        Anio: 2022,
+        Tipo: "Deportivo",
+        Capacidad: 4,
+        Precio_Diario: 75.00
+    },
+    {
+        id_: 4,
+        Marca: "Chevrolet",
+        Modelo: "Spark",
+        Anio: 2019,
+        Tipo: "Compacto",
+        Capacidad: 4,
+        Precio_Diario: 30.00
+    },
+    {
+        id_: 5,
+        Marca: "Nissan",
+        Modelo: "X-Trail",
+        Anio: 2020,
+        Tipo: "SUV",
+        Capacidad: 7,
+        Precio_Diario: 60.00
+    }
+]);
+
+db.Alquiler.insertMany([
+    {
+        id: 1,
+        ID_Cliente: 1,
+        ID_Automovil: 3,
+        Fecha_Inicio: ISODate("2023-07-01"),
+        Fecha_Fin: ISODate("2023-07-05"),
+        Costo_Total: 240.00,
+        Estado: "Activo"
+    },
+    {
+        id: 2,
+        ID_Cliente: 2,
+        ID_Automovil: 4,
+        Fecha_Inicio: ISODate("2023-07-02"),
+        Fecha_Fin: ISODate("2023-07-07"),
+        Costo_Total: 275.00,
+        Estado: "Disponible"
+    },
+    {
+        id: 3,
+        ID_Cliente: 3,
+        ID_Automovil: 1,
+        Fecha_Inicio: ISODate("2023-07-10"),
+        Fecha_Fin: ISODate("2023-07-15"),
+        Costo_Total: 350.00,
+        Estado: "Activo"
+    },
+    {
+        id: 4,
+        ID_Cliente: 1,
+        ID_Automovil: 2,
+        Fecha_Inicio: ISODate("2023-08-01"),
+        Fecha_Fin: ISODate("2023-08-05"),
+        Costo_Total: 225.00,
+        Estado: "Activo"
+    },
+    {
+        id: 5,
+        ID_Cliente: 4,
+        ID_Automovil: 5,
+        Fecha_Inicio: ISODate("2023-07-20"),
+        Fecha_Fin: ISODate("2023-07-25"),
+        Costo_Total: 420.00,
+        Estado: "Activo"
+    }    
+]);
+
+db.Reserva.insertMany([
+    {
+        id: 1,
+        ID_Cliente: 2,
+        ID_Automovil: 1,
+        Fecha_Reserva: ISODate("2023-07-06"),
+        Fecha_Inicio: ISODate("2023-07-10"),
+        Fecha_Fin: ISODate("2023-07-15"),
+        Estado: "Pendiente"
+    },
+    {
+        id: 2,
+        ID_Cliente: 3,
+        ID_Automovil: 3,
+        Fecha_Reserva: ISODate("2023-07-07"),
+        Fecha_Inicio: ISODate("2023-07-12"),
+        Fecha_Fin: ISODate("2023-07-17"),
+        Estado: "Pendiente"
+    },
+    {
+        id: 3,
+        ID_Cliente: 1,
+        ID_Automovil: 2,
+        Fecha_Reserva: ISODate("2023-07-15"),
+        Fecha_Inicio: ISODate("2023-07-20"),
+        Fecha_Fin: ISODate("2023-07-25"),
+        Estado: "Confirmada"
+    },
+    {
+        id: 4,
+        ID_Cliente: 4,
+        ID_Automovil: 4,
+        Fecha_Reserva: ISODate("2023-07-25"),
+        Fecha_Inicio: ISODate("2023-08-01"),
+        Fecha_Fin: ISODate("2023-08-05"),
+        Estado: "Pendiente"
+    },
+    {
+        id: 5,
+        ID_Cliente: 5,
+        ID_Automovil: 5,
+        Fecha_Reserva: ISODate("2023-07-30"),
+        Fecha_Inicio: ISODate("2023-08-05"),
+        Fecha_Fin: ISODate("2023-08-10"),
+        Estado: "Confirmada"
+    }            
+]);
+
+db.Sucursal.insertMany([
+    {
+        id: 1,
+        Nombre: "Sucursal A",
+        Direccion: "Calle Principal 123",
+        Telefono: "1111111111"
+    },
+    {
+        id: 2,
+        Nombre: "Sucursal B",
+        Direccion: "Avenida Central 456",
+        Telefono: "2222222222"
+    },
+    {
+        id: 3,
+        Nombre: "Sucursal C",
+        Direccion: "Avenida Secundaria 789",
+        Telefono: "3333333333"
+    },
+    {
+        id: 4,
+        Nombre: "Sucursal D",
+        Direccion: "Plaza Comercial 456",
+        Telefono: "4444444444"
+    },
+    {
+        id: 5,
+        Nombre: "Sucursal E",
+        Direccion: "Calle Peatonal 789",
+        Telefono: "5555555555"
+    }            
+]);
+
+db.Sucursal_Automovil.insertMany([
+    {
+        ID_Sucursal: 1,
+        ID_Automovil: 1,
+        Cantidad_Disponible: 3
+    },
+    {
+        ID_Sucursal: 2,
+        ID_Automovil: 2,
+        Cantidad_Disponible: 5
+    },
+    {
+        ID_Sucursal: 1,
+        ID_Automovil: 3,
+        Cantidad_Disponible: 2
+    },
+    {
+        ID_Sucursal: 2,
+        ID_Automovil: 4,
+        Cantidad_Disponible: 4
+    },
+    {
+        ID_Sucursal: 3,
+        ID_Automovil: 5,
+        Cantidad_Disponible: 3
+    }    
+]);
+
+db.Empleado.insertMany([
+    {
+        id: 1,
+        Nombre: "Ana",
+        Apellido: "Gomez",
+        DNI: "123456789",
+        Direccion: "Calle 111",
+        Telefono: "1111111111",
+        Cargo: "Gerente"
+    },
+    {
+        id: 2,
+        Nombre: "Luis",
+        Apellido: "Rodriguez",
+        DNI: "987654321",
+        Direccion: "Avenida 222",
+        Telefono: "2222222222",
+        Cargo: "Asistente"
+    },
+    {
+        id: 3,
+        Nombre: "Carlos",
+        Apellido: "Martínez",
+        DNI: "456789012",
+        Direccion: "Plaza 333",
+        Telefono: "3333333333",
+        Cargo: "Vendedor"
+    },
+    {
+        id: 4,
+        Nombre: "Laura",
+        Apellido: "López",
+        DNI: "890123456",
+        Direccion: "Calle 444",
+        Telefono: "4444444444",
+        Cargo: "Recepcionista"
+    },
+    {
+        id: 5,
+        Nombre: "Juan",
+        Apellido: "Ramírez",
+        DNI: "567890123",
+        Direccion: "Avenida 555",
+        Telefono: "5555555555",
+        Cargo: "Técnico"
+    }    
+]);
+
+db.Registro_Entrega.insertMany([
+    {
+        id: 1,
+        ID_Alquiler: 1,
+        ID_Empleado: 3,
+        Fecha_Entrega: ISODate("2023-07-05"),
+        Combustible_Entregado: 40.00,
+        Kilometraje_Entregado: 2000
+    },
+    {
+        id: 2,
+        ID_Alquiler: 2,
+        ID_Empleado: 4,
+        Fecha_Entrega: ISODate("2023-07-07"),
+        Combustible_Entregado: 30.00,
+        Kilometraje_Entregado: 1800
+    },
+    {
+        id: 3,
+        ID_Alquiler: 3,
+        ID_Empleado: 1,
+        Fecha_Entrega: ISODate("2023-07-15"),
+        Combustible_Entregado: 45.00,
+        Kilometraje_Entregado: 2200
+    },
+    {
+        id: 4,
+        ID_Alquiler: 4,
+        ID_Empleado: 2,
+        Fecha_Entrega: ISODate("2023-08-01"),
+        Combustible_Entregado: 35.00,
+        Kilometraje_Entregado: 1900
+    },
+    {
+        id: 5,
+        ID_Alquiler: 5,
+        ID_Empleado: 5,
+        Fecha_Entrega: ISODate("2023-07-25"),
+        Combustible_Entregado: 50.00,
+        Kilometraje_Entregado: 2400
+    }    
+]);
+
+db.Registro_Devolucion.insertMany([
+    {
+        id: 1,
+        ID_Alquiler: 1,
+        ID_Empleado: 3,
+        Fecha_Devolucion: ISODate("2023-07-10"),
+        Combustible_Devuelto: 10.00,
+        Kilometraje_Devuelto: 2500,
+        Monto_Adicional: 20.00
+    },
+    {
+        id: 2,
+        ID_Alquiler: 2,
+        ID_Empleado: 4,
+        Fecha_Devolucion: ISODate("2023-07-12"),
+        Combustible_Devuelto: 15.00,
+        Kilometraje_Devuelto: 2100,
+        Monto_Adicional: 15.00
+    },
+    {
+        id: 3,
+        ID_Alquiler: 3,
+        ID_Empleado: 1,
+        Fecha_Devolucion: ISODate("2023-07-20"),
+        Combustible_Devuelto: 5.00,
+        Kilometraje_Devuelto: 2300,
+        Monto_Adicional: 30.00
+    },
+    {
+        id: 4,
+        ID_Alquiler: 4,
+        ID_Empleado: 2,
+        Fecha_Devolucion: ISODate("2023-08-05"),
+        Combustible_Devuelto: 20.00,
+        Kilometraje_Devuelto: 2000,
+        Monto_Adicional: 10.00
+    },
+    {
+        id: 5,
+        ID_Alquiler: 5,
+        ID_Empleado: 5,
+        Fecha_Devolucion: ISODate("2023-07-30"),
+        Combustible_Devuelto: 8.00,
+        Kilometraje_Devuelto: 2600,
+        Monto_Adicional: 25.00
+    }    
+]);
