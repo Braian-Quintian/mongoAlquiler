@@ -107,3 +107,7 @@
     Se pueden utilizar los siguientes endpoints para la collection `reservas`
     - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
     ![GET-reservas](/assets/img/GET-reservas.png)
+- Empleados
+    Se pueden utilizar los siguientes endpoints para la collection `empleados`
+    - GET /empleados : Trae todos los empleados que tengan el cargo de vendedor
+    ![GET-empleados](/assets/img/GET-empleados.png)
