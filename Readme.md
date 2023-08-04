@@ -79,7 +79,7 @@
 
 - **LIMITES DE PETICION DE ENPOINTS**
     
-      `NOTA`: Los endpoints tienen un limite de peticiones por minuto, si se excede el limite de peticiones por minuto, el servidor respondera con un error 429, si esto sucede, espera un minuto y vuelve a intentarlo.
+    `NOTA`: Los endpoints tienen un limite de peticiones por minuto, si se excede el limite de peticiones por minuto, el servidor respondera con un error 429, si esto sucede, espera un minuto y vuelve a intentarlo.
 
 - Cliente
 
