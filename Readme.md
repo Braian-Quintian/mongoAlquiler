@@ -76,3 +76,9 @@
   `NOTA`: recuerda que el token solamente dura `30m`  después de este tiempo tendrás que pedir otro
   `NOTA`: El token solo servira para la collection que lo solicitaste, si quieres acceder a otra collection deberas solicitar otro token y repetir el mismo proceso para implementarlo.
   `NOTA`: Si presentas algun error al momento de solicitar el token, revisa que hayas ingresado correctamente los datos, si el error persiste, revisa que la collection que estas solicitando exista en la base de datos.
+
+- Cliente
+
+    Se pueden utilizar los siguientes endpoints para la collection `cliente`
+    - GET /clientes
+    ![GET-clientes](/assets/img/GET-cliente.png)
