@@ -95,6 +95,6 @@
 
 - Alquileres
 
-    Se pueden utilizar los siguientes endpoints para la collection `automovil`
+    Se pueden utilizar los siguientes endpoints para la collection `alquileres`
     - GET /alquileres : Trae todos los alquileres activos junto con los datos de los clientes
     ![GET-alquileres](/assets/img/GET-alquileres.png)
