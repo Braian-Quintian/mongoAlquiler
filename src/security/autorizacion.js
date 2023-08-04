@@ -13,7 +13,7 @@ export async function generateToken(id,collection) {
     const jwt = await jwtconstructor
       .setProtectedHeader({ alg: "HS256", typ: "JWT" })
       .setIssuedAt()
-      .setExpirationTime("60s")
+      .setExpirationTime("30m")
       .sign(encoder.encode(conexion.token));
 
     return jwt;
