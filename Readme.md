@@ -98,3 +98,7 @@
     Se pueden utilizar los siguientes endpoints para la collection `alquileres`
     - GET /alquileres : Trae todos los alquileres activos junto con los datos de los clientes
     ![GET-alquileres](/assets/img/GET-alquileres.png)
+- Reservas
+    Se pueden utilizar los siguientes endpoints para la collection `reservas`
+    - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
+    ![GET-reservas](/assets/img/GET-reservas.png)
