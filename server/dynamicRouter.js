@@ -2,6 +2,7 @@ import { router as Clientes } from '../src/middlewares/clientes.js'
 import { router as Automovil } from '../src/middlewares/automoviles.js'
 import { router as Alquileres } from '../src/middlewares/alquileres.js'
 import { router as Reservas } from '../src/middlewares/reservas.js'
+import {router as Empleados} from '../src/middlewares/empleados.js'
 
 export async function dynamicRouter(req, res, next) {
     const { collection } = req.params;
@@ -15,6 +16,8 @@ export async function dynamicRouter(req, res, next) {
             return Alquileres(req, res, next);
         case 'reservas':
             return Reservas(req, res, next);
+        case 'empleados':
+            return Empleados(req, res, next);
         default:
             return res.status(404).send({ error: 'Ruta no encontrada' });
     }
