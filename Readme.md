@@ -28,7 +28,9 @@
 7. Ejecuta el comando `npm run dev` para iniciar el servidor
 
 ​	 ![npm-install](/assets/img/npm-run-dev.png)
-    1. ¡Felicitaciones!, ya has iniciado el servidor y la base de datos y puedes proceder a  utilizar los endpoints+
+
+    1. ¡Felicitaciones!, ya has iniciado el servidor y la base de datos y puedes proceder a  utilizar los endpoints
+
     2. `NOTA`: Para utilizar los endpoints recuerda que debes tener un token que se genera con el endpoint `/autorizacion` (en la siguienta parte se te muestra como puedes pedir el token y utilizarlo)
 
 ## Endpoints
@@ -100,7 +102,7 @@
     ![GET-alquileres](/assets/img/GET-alquileres.png)
     - GET /alquileres/:id : Trae el alquiler activo con el id especificado junto con los datos del cliente
     ![GET-alquileres-id](/assets/img/GET-alquileres-id.png)
-    
+
 - Reservas
     Se pueden utilizar los siguientes endpoints para la collection `reservas`
     - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
