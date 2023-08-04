@@ -80,5 +80,14 @@
 - Cliente
 
     Se pueden utilizar los siguientes endpoints para la collection `cliente`
-    - GET /clientes
+    - GET /clientes: muestra todos los clientes en la base de datos
     ![GET-clientes](/assets/img/GET-cliente.png)
+
+- Automviles
+    Se pueden utilizar los siguientes endpoints para la collection `automovil`
+    - GET /automoviles : Trae todos los automoviles disponibles para alquiler
+    ![GET-automoviles](/assets/img/GET-automoviles.png)
+- Alquileres
+    Se pueden utilizar los siguientes endpoints para la collection `automovil`
+    - GET /alquileres : Trae todos los alquileres activos junto con los datos de los clientes
+    ![GET-alquileres](/assets/img/GET-alquileres.png)
