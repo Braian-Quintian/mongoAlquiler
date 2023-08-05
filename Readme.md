@@ -154,7 +154,7 @@
     -GET /reservas/:id : Trae la reserva con el id especificado 
     ![GET-reservas-id](/assets/img/GET-reservas-id.png)
 
-    - GET /reservas/:id : Lista las reservas pendientes realizadas por un cliente
+    - GET /reservas/pendiente/:id : Lista las reservas pendientes realizadas por un cliente
     específico
 
     ![GET-reservas-id](/assets/img/GET-reservas-pendientes.png)
