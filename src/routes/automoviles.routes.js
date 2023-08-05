@@ -63,12 +63,13 @@ const getAutomovilesDisponibles = async (req, res) => {
                     Cantidad_Total_Disponible: 1
                 }
             }
-        ]);
+        ]).toArray();
+
         res.json(result);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};
 
 export const methodsAutomoviles = {
     getAutomoviles,
