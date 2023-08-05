@@ -115,6 +115,9 @@
     Se pueden utilizar los siguientes endpoints para la collection `reservas`
     - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
     ![GET-reservas](/assets/img/GET-reservas.png)
+    - GET /reservas/:id : Lista las reservas pendientes realizadas por un cliente
+    específico
+    ![GET-reservas-id](/assets/img/GET-reservas-cliente.png)
 
 - Empleados
 
