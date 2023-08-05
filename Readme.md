@@ -120,8 +120,10 @@
     ![GET-automoviles-ordenados](/assets/img/GET-automoviles-ordenados.png)
 
     - GET /automoviles/sucursal : Trae la cantidad total de automóviles en cada sucursal junto con su dirección
-    
+
     ![GET-automoviles-sucursal](/assets/img/GET-automoviles-sucursal.png)
+
+    -GET /automoviles/capacidad-disponibles : Trae todos los automoviles disponibles con la capacidad mayor a 5 personas y que esten disponibles
     
 - Alquileres
 
