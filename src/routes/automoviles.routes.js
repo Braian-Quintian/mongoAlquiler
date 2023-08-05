@@ -71,7 +71,19 @@ const getAutomovilesDisponibles = async (req, res) => {
     }
 };
 
+const getCapacidadAutomoviles = async (req, res) => {
+    if (!req.rateLimit) return;
+    try {
+        const db = await connect();
+        const result = await db.collection("Automovil").find({ Capacidad: { $gte: 5 } }).project({ _id: 0 }).toArray();
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 export const methodsAutomoviles = {
     getAutomoviles,
-    getAutomovilesDisponibles
+    getAutomovilesDisponibles,
+    getCapacidadAutomoviles
 };
