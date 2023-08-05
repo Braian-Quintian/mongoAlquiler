@@ -93,9 +93,45 @@ const getAutomovilesOrdenados = async (req, res) => {
     }
 }
 
+const getAutomovilesPorSucursal = async (req, res) => {
+    if (!req.rateLimit) return;
+    try {
+        const db = await connect();
+        let automovil  = await db.collection("Sucursal_Automovil");
+
+        let result = await automovil.aggregate([
+            {
+                $group: {
+                    _id: "$ID_Sucursal",
+                    Cantidad_Total_Disponible: { $sum: "$Cantidad_Disponible" }
+                }
+            },
+            {
+                $lookup: {
+                    from: "Sucursal",
+                    localField: "_id",
+                    foreignField: "id",
+                    as: "sucursal"
+                }
+            },
+            { $unwind: "$sucursal" },
+            {
+                $project: {
+                    "sucursal._id": 0,
+                }
+            }
+        ]).toArray();
+        res.json(result);
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
 export const methodsAutomoviles = {
     getAutomoviles,
     getAutomovilesDisponibles,
     getCapacidadAutomoviles,
-    getAutomovilesOrdenados
+    getAutomovilesOrdenados,
+    getAutomovilesPorSucursal
 };

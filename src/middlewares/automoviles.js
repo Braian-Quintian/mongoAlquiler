@@ -6,6 +6,7 @@ router.get('/', methodsAutomoviles.getAutomoviles);
 router.get('/disponibles', methodsAutomoviles.getAutomovilesDisponibles);
 router.get('/capacidad', methodsAutomoviles.getCapacidadAutomoviles);
 router.get('/ordenados', methodsAutomoviles.getAutomovilesOrdenados);
+router.get('/sucursal', methodsAutomoviles.getAutomovilesPorSucursal);
 
 export {
     router
