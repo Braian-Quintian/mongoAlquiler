@@ -124,7 +124,7 @@
     ![GET-automoviles-sucursal](/assets/img/GET-automoviles-sucursal.png)
 
     -GET /automoviles/capacidad-disponibles : Trae todos los automoviles disponibles con la capacidad mayor a 5 personas y que esten disponibles
-    
+    ![GET-automoviles-capacidad-disponibles](/assets/img/GET-automoviles-capacidad-disponibles.png)
 - Alquileres
 
     Se pueden utilizar los siguientes endpoints para la collection `alquileres`
