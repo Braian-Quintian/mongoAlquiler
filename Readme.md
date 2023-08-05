@@ -90,6 +90,8 @@
     ![GET-clientes](/assets/img/GET-cliente.png)
     - GET /clientes/:id : muestra el cliente con el DNI especificado
     ![GET-clientes-id](/assets/img/GET-clientes-dni.png)
+    - GET /clientes/alquiler : Se obtienen los datos de los clientes que realizaron al  menos un alquiler.
+    ![GET-clientes-alquiler](/assets/img/GET-clientes-alquiler.png)
 
 - Automviles
 
