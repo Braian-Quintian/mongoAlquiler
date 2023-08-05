@@ -142,6 +142,9 @@
     -GET /alquileres/inicio : Trae todos los alquileres activos que iniciaron en la fecha '2023-07-05'
 
     ![GET-alquileres-inicio](/assets/img/GET-alquileres-inicio.png)
+
+    - GET /alquileres/entre : Trae todos los alquileres activos que iniciaron entre las fechas '2023-07-05' y '2023-07-10'
+    ![GET-alquileres-entre](/assets/img/GET-alquileres-entre.png)
     
 - Reservas
 
