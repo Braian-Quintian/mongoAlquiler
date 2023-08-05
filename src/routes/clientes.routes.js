@@ -12,6 +12,19 @@ const getClientes = async (req, res) => {
     }
 }   
 
+const getClienteById = async (req, res) => {
+    if(!req.rateLimit) return;
+    try {
+        let db = await connect();
+        let cliente = db.collection("Cliente");
+        let result = await cliente.findOne({ DNI: req.params.id });
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
 export const methodsClientes = {
-    getClientes
+    getClientes,
+    getClienteById
 }
