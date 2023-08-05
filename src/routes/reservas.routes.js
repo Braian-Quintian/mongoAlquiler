@@ -44,7 +44,7 @@ const getReservas = async (req, res) => {
     }
 }
 
-const getReservasById = async (req, res) => {
+const getReservasByIdPendientes = async (req, res) => {
     if(!req.rateLimit) return;
     try{
         let db = await connect();
@@ -77,7 +77,47 @@ const getReservasById = async (req, res) => {
     }
 }
 
+const getReservasById = async (req, res) => {
+    if(!req.rateLimit) return;
+    try{
+        let db = await connect();
+        let reserva =db.collection("Reserva");
+
+        let result = await reserva.aggregate([
+            {
+                $match: { id: parseInt(req.params.id) }
+            },
+            {
+                $lookup: {
+                    from: "Cliente",
+                    localField: "ID_Cliente",
+                    foreignField: "id",
+                    as: "cliente"
+                }
+            },
+            {
+                $unwind: "$cliente"
+            },
+            {
+                $project: {
+                    _id:0,
+                  "cliente.id": 1,
+                  "cliente.Nombre": 1,
+                  "cliente.Apellido": 1,
+                  "cliente.DNI":1,
+                  "cliente.Direccion":1,
+                  "cliente.Telefono":1,
+                  "cliente.Email":1
+                }
+            }
+        ]).toArray();
+        res.json(result)
+    }catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
 export const methodsReservas = {
     getReservas,
+    getReservasByIdPendientes,
     getReservasById
 }
