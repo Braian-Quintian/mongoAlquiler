@@ -94,6 +94,8 @@
     Se pueden utilizar los siguientes endpoints para la collection `automovil`
     - GET /automoviles : Trae todos los automoviles disponibles para alquiler
     ![GET-automoviles](/assets/img/GET-automoviles.png)
+    -GET /automoviles/disponibles : Trae todos los automoviles disponibles en cada sucursal
+    ![GET-automoviles-disponibles](/assets/img/GET-disponibles-sucursal.png)
 
 - Alquileres
 
