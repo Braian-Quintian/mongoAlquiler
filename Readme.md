@@ -125,3 +125,5 @@
     Se pueden utilizar los siguientes endpoints para la collection `empleados`
     - GET /empleados : Trae todos los empleados que tengan el cargo de vendedor
     ![GET-empleados](/assets/img/GET-empleados.png)
+    - GET /empleados/otros : Trae todos los empleados que tengan el cargo de gerente o asistente
+    ![GET-empleados-otros](/assets/img/GET-otros-empleados.png)
