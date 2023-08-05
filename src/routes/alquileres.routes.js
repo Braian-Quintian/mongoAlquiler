@@ -77,9 +77,20 @@ const getAlquileresInicio = async (req, res) => {
     }
 };
 
+const getTotalAlquileres = async (req, res) => {
+    if (!req.rateLimit) return;
+    try{
+        const db = await connect();
+        const result = await db.collection("Alquiler").find().toArray();
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
 
 export const methodsAlquileres = {
     getAlquileres,
     getAlquilerById,
-    getAlquileresInicio
+    getAlquileresInicio,
+    getTotalAlquileres
 }
