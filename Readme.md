@@ -108,6 +108,7 @@
     ![GET-alquileres](/assets/img/GET-alquileres.png)
     - GET /alquileres/:id : Trae el alquiler activo con el id especificado junto con los datos del cliente
     ![GET-alquileres-id](/assets/img/GET-alquileres-id.png)
+    -GET /alquileres/inicio : Trae todos los alquileres activos que iniciaron en la fecha '2023-07-05'
 
 - Reservas
 
