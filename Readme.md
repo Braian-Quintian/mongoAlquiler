@@ -88,6 +88,8 @@
     Se pueden utilizar los siguientes endpoints para la collection `cliente`
     - GET /clientes: muestra todos los clientes en la base de datos
     ![GET-clientes](/assets/img/GET-cliente.png)
+    - GET /clientes/:id : muestra el cliente con el DNI especificado
+    ![GET-clientes-id](/assets/img/GET-clientes-dni.png)
 
 - Automviles
 
