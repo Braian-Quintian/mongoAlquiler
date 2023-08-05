@@ -128,10 +128,51 @@ const getAutomovilesPorSucursal = async (req, res) => {
     }
 }
 
+const getCapacidadAutomovilesDisponibles = async (req, res) => {
+    if (!req.rateLimit) return;
+    try {
+        const db = await connect();
+        const result = await db.collection("Alquiler").aggregate([
+            {
+                $match: { Estado: "Disponible" }
+            },
+            {
+                $lookup: {
+                    from: "Automovil",
+                    localField: "ID_Automovil",
+                    foreignField: "id_",
+                    as: "automovil"
+                }
+            },
+            { $unwind: "$automovil" },
+            {
+                $match: { "automovil.Capacidad": 5 }
+            },
+            {
+                $project: {
+                    "automovil.id_": 1,
+                    "automovil.Marca": 1,
+                    "automovil.Modelo": 1,
+                    "automovil.Anio": 1,
+                    "automovil.Tipo": 1,
+                    "automovil.Capacidad": 1,
+                    "automovil.Precio_Diario": 1,
+                    "_id": 0
+                }
+            }
+        ]).toArray();
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+
 export const methodsAutomoviles = {
     getAutomoviles,
     getAutomovilesDisponibles,
     getCapacidadAutomoviles,
     getAutomovilesOrdenados,
-    getAutomovilesPorSucursal
+    getAutomovilesPorSucursal,
+    getCapacidadAutomovilesDisponibles
 };
