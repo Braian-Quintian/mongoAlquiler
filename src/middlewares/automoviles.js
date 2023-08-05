@@ -4,6 +4,7 @@ const router = Router();
 
 router.get('/', methodsAutomoviles.getAutomoviles);
 router.get('/disponibles', methodsAutomoviles.getAutomovilesDisponibles);
+router.get('/capacidad', methodsAutomoviles.getCapacidadAutomoviles);
 
 export {
     router
