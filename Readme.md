@@ -124,7 +124,9 @@
     ![GET-automoviles-sucursal](/assets/img/GET-automoviles-sucursal.png)
 
     -GET /automoviles/capacidad-disponibles : Trae todos los automoviles disponibles con la capacidad mayor a 5 personas y que esten disponibles
+
     ![GET-automoviles-capacidad-disponibles](/assets/img/GET-automoviles-capacidad-disponibles.png)
+
 - Alquileres
 
     Se pueden utilizar los siguientes endpoints para la collection `alquileres`
@@ -149,10 +151,13 @@
 
     ![GET-reservas](/assets/img/GET-reservas.png)
 
+    -GET /reservas/:id : Trae la reserva con el id especificado 
+    ![GET-reservas-id](/assets/img/GET-reservas-id.png)
+
     - GET /reservas/:id : Lista las reservas pendientes realizadas por un cliente
     específico
 
-    ![GET-reservas-id](/assets/img/GET-reservas-cliente.png)
+    ![GET-reservas-id](/assets/img/GET-reservas-pendientes.png)
 
 - Empleados
 
