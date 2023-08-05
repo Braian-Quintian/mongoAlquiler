@@ -119,6 +119,10 @@
 
     ![GET-automoviles-ordenados](/assets/img/GET-automoviles-ordenados.png)
 
+    - GET /automoviles/sucursal : Trae la cantidad total de automóviles en cada sucursal junto con su dirección
+    
+    ![GET-automoviles-sucursal](/assets/img/GET-automoviles-sucursal.png)
+    
 - Alquileres
 
     Se pueden utilizar los siguientes endpoints para la collection `alquileres`
@@ -157,5 +161,5 @@
     ![GET-empleados](/assets/img/GET-empleados.png)
 
     - GET /empleados/otros : Trae todos los empleados que tengan el cargo de gerente o asistente
-    
+
     ![GET-empleados-otros](/assets/img/GET-otros-empleados.png)
