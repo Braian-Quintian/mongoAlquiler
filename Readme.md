@@ -98,6 +98,8 @@
     ![GET-automoviles](/assets/img/GET-automoviles.png)
     -GET /automoviles/disponibles : Trae todos los automoviles disponibles en cada sucursal
     ![GET-automoviles-disponibles](/assets/img/GET-disponibles-sucursal.png)
+    - GET /automoviles/capacidad : Trae todos los automoviles disponibles con la capacidad mayor a 5 personas
+    ![GET-automoviles-capacidad](/assets/img/GET-automoviles-capacidad.png)
 
 - Alquileres
 
@@ -108,10 +110,13 @@
     ![GET-alquileres-id](/assets/img/GET-alquileres-id.png)
 
 - Reservas
+
     Se pueden utilizar los siguientes endpoints para la collection `reservas`
     - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
     ![GET-reservas](/assets/img/GET-reservas.png)
+
 - Empleados
+
     Se pueden utilizar los siguientes endpoints para la collection `empleados`
     - GET /empleados : Trae todos los empleados que tengan el cargo de vendedor
     ![GET-empleados](/assets/img/GET-empleados.png)
