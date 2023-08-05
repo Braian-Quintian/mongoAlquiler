@@ -86,46 +86,76 @@
 - Cliente
 
     Se pueden utilizar los siguientes endpoints para la collection `cliente`
+
     - GET /clientes: muestra todos los clientes en la base de datos
+
     ![GET-clientes](/assets/img/GET-cliente.png)
+
     - GET /clientes/:id : muestra el cliente con el DNI especificado
+
     ![GET-clientes-id](/assets/img/GET-clientes-dni.png)
+
     - GET /clientes/alquiler : Se obtienen los datos de los clientes que realizaron al  menos un alquiler.
+
     ![GET-clientes-alquiler](/assets/img/GET-clientes-alquiler.png)
 
 - Automviles
 
     Se pueden utilizar los siguientes endpoints para la collection `automovil`
+
     - GET /automoviles : Trae todos los automoviles disponibles para alquiler
+
     ![GET-automoviles](/assets/img/GET-automoviles.png)
+
     -GET /automoviles/disponibles : Trae todos los automoviles disponibles en cada sucursal
+
     ![GET-automoviles-disponibles](/assets/img/GET-disponibles-sucursal.png)
+
     - GET /automoviles/capacidad : Trae todos los automoviles disponibles con la capacidad mayor a 5 personas
+
     ![GET-automoviles-capacidad](/assets/img/GET-automoviles-capacidad.png)
+
+    - GET /automoviles/ordenados : Trae todos los automóviles ordenados por marca y modelo.
+
+    ![GET-automoviles-ordenados](/assets/img/GET-automoviles-ordenados.png)
 
 - Alquileres
 
     Se pueden utilizar los siguientes endpoints para la collection `alquileres`
-    - GET /alquileres : Trae todos los alquileres activos junto con los datos de los clientes
-    ![GET-alquileres](/assets/img/GET-alquileres.png)
-    - GET /alquileres/:id : Trae el alquiler activo con el id especificado junto con los datos del cliente
-    ![GET-alquileres-id](/assets/img/GET-alquileres-id.png)
-    -GET /alquileres/inicio : Trae todos los alquileres activos que iniciaron en la fecha '2023-07-05'
-    ![GET-alquileres-inicio](/assets/img/GET-alquileres-inicio.png)
 
+    - GET /alquileres : Trae todos los alquileres activos junto con los datos de los clientes
+
+    ![GET-alquileres](/assets/img/GET-alquileres.png)
+
+    - GET /alquileres/:id : Trae el alquiler activo con el id especificado junto con los datos del cliente
+
+    ![GET-alquileres-id](/assets/img/GET-alquileres-id.png)
+
+    -GET /alquileres/inicio : Trae todos los alquileres activos que iniciaron en la fecha '2023-07-05'
+
+    ![GET-alquileres-inicio](/assets/img/GET-alquileres-inicio.png)
+    
 - Reservas
 
     Se pueden utilizar los siguientes endpoints para la collection `reservas`
+
     - GET /reservas : Trae todas las reservas activas junto con los datos de los clientes y del automovil reservado
+
     ![GET-reservas](/assets/img/GET-reservas.png)
+
     - GET /reservas/:id : Lista las reservas pendientes realizadas por un cliente
     específico
+
     ![GET-reservas-id](/assets/img/GET-reservas-cliente.png)
 
 - Empleados
 
     Se pueden utilizar los siguientes endpoints para la collection `empleados`
+
     - GET /empleados : Trae todos los empleados que tengan el cargo de vendedor
+
     ![GET-empleados](/assets/img/GET-empleados.png)
+
     - GET /empleados/otros : Trae todos los empleados que tengan el cargo de gerente o asistente
+    
     ![GET-empleados-otros](/assets/img/GET-otros-empleados.png)
