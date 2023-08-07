@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --quiet server/server.js",
-    "install": "npm i -E express express-rate-limit jose mongodb dotenv",
+    "install": "npm i -E express express-rate-limit jose mongodb dotenv joi",
     "install-dev": "npm i -D nodemon"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "dotenv": "16.3.1",
     "express": "4.18.2",
     "express-rate-limit": "6.8.1",
+    "joi": "17.9.2",
     "jose": "4.14.4",
     "mongodb": "5.7.0"
   }
