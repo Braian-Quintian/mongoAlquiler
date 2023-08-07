@@ -99,6 +99,10 @@
 
     ![GET-clientes-alquiler](/assets/img/GET-clientes-alquiler.png)
 
+    -POST /clientes : Se crea un nuevo cliente
+
+    ![POST-clientes](/assets/img/POST-cliente.png)
+
 - Automviles
 
     Se pueden utilizar los siguientes endpoints para la collection `automovil`
