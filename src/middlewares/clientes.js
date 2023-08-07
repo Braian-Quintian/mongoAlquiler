@@ -4,6 +4,7 @@ const router = Router();
 
 router.get('/', methodsClientes.getClientes);
 router.get('/alquiler', methodsClientes.getClientesAlquiler);
+router.post('/', methodsClientes.addCliente);
 router.get('/:id', methodsClientes.getClienteById);
 
 export {
