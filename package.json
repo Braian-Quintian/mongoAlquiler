@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon --quiet server/server.js",
     "tsc": "tsc  -w",
-    "install": "npm i -E express express-rate-limit jose mongodb dotenv typescript class-transformer class-validator",
+    "install": "npm i -E express express-rate-limit jose mongodb dotenv typescript class-transformer class-validator reflect-metadata",
     "install-dev": "npm i -D nodemon"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "express-rate-limit": "6.8.1",
     "jose": "4.14.4",
     "mongodb": "5.7.0",
+    "reflect-metadata": "0.1.13",
     "typescript": "5.1.6"
   }
 }
