@@ -62,11 +62,7 @@ const addCliente = async (req, res) => {
         let db = await connect();
         let cliente = db.collection("Cliente");
 
-        const validation = schema.validate(req.body);
-        if (validation.error) {
-            res.status(400).json({ message: validation.error.details[0].message });
-            return;
-        }
+        
 
         let result = await cliente.insertOne(req.body); // Usa req.body después de la validación
         res.json(result);
