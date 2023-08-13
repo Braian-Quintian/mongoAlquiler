@@ -1,14 +1,31 @@
 import rateLimit from 'express-rate-limit';
 
-export let limitGet = () => {
+const limitGet = () => {
     return rateLimit({
         windowMs: 15 * 60 * 1000, // 15 minutes
         max: 10, // 10 requests,
         standardHeaders: true, // Return rate limit info in the RateLimit- headers
         legacyHeaders: false, // Disable the 'X-RateLimit' legacy header
-        skip: (req, res) => req.headers["content-length"] > 200
-        ? res.status(413).json({ status: 413, message: "Content too large" })
-        : false,
-        message: { status: 429, message: 'Too many requests from this IP, please try again after 15 minutes' },
+        message: (req, res) => {
+            res.status(429).send({
+                status: 429,
+                message: "Too many requests from this IP, please try again after 15 minutes"
+            });
+        }
     });
 };
+
+const limitPost= () => {
+    return rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 10, // 10 requests,
+        standardHeaders: true,
+        legacyHeaders: false,
+        skip: (req, res) => req.headers["content-length"] > 1000 ? (res.status(413).send({ status: 413, message: "Content too large" }), true) : false
+    })
+}
+
+export {
+    limitGet,
+    limitPost
+}
