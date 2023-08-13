@@ -1,4 +1,3 @@
-import Joi from 'joi';
 import { connect } from '../connection/connection.js'
 
 const getClientes = async (req, res) => {
@@ -62,15 +61,6 @@ const addCliente = async (req, res) => {
     try {
         let db = await connect();
         let cliente = db.collection("Cliente");
-        const schema = Joi.object({
-            id: Joi.number().integer().required(),
-            Nombre: Joi.string().required(),
-            Apellido: Joi.string().required(),
-            DNI: Joi.string().required(),
-            Direccion: Joi.string().max(100).required(),
-            Telefono: Joi.string().pattern(/^3[0-9]{9}$/).required(),
-            Email: Joi.string().email().required()
-        });
 
         const validation = schema.validate(req.body);
         if (validation.error) {
