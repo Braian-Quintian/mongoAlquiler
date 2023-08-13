@@ -25,7 +25,39 @@
 
     ![npm-run-install](/assets/img/npm-run-install.png)
 
-7. Ejecuta el comando `npm run dev` para iniciar el servidor
+7. Ejecuta el comando `npx tsc --init` para crear el archivo de configuracion de typescript
+
+    ![tsc-init](/assets/img/tsc-init.png)
+
+    cambia todo el contenido del archivo tsconfig.json por este json:
+
+    ![tsconfig.json](/assets/img/tsconfig.png)
+
+```json
+{
+​  "compilerOptions": {
+​  "target": "es6",
+​  "module": "ES6",
+​  "moduleResolution": "node",
+​   "outDir": "./controller",
+​   "esModuleInterop": true,
+​   "experimentalDecorators": true,
+​   "emitDecoratorMetadata": true
+​   }
+}
+```
+`NOTA`:En caso de tener un error como este:
+    ![error](/assets/img/error-env.png)
+`SOLUCION`: Simplemente borra los espacios sobrantes.
+    ![solucion](/assets/img/solucion.png)
+
+8. Ejecuta el comando `npm run tsc` para compilar el proyecto y se creará una carpeta llamada controller que contendra la validacion de toda la data.
+    ![npm-run-tsc](/assets/img/npm-run-tsc.png)
+
+9. Una vez que finalice de compilar los archivos, termina el proceso precionando Ctrl + C
+    ![terminar-proceso](/assets/img/terminar-proceso.png)
+
+10. Ejecuta el comando `npm run dev` para iniciar el servidor
 
 ​	 ![npm-install](/assets/img/npm-run-dev.png)
 
