@@ -52,8 +52,10 @@
   ]
 }
 ```
+
 `NOTA`:En caso de tener un error como este:
     ![error](/assets/img/error-env.png)
+    
 `SOLUCION`: Simplemente borra los espacios sobrantes.
     ![solucion](/assets/img/solucion.png)
 
