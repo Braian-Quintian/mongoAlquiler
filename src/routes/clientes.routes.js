@@ -18,7 +18,6 @@ const getClientes = async (req, res) => {
 const getClienteById = async (req, res) => {
     if(!req.rateLimit) return;
     try {
-        // let db = await connect();
         let cliente = db.collection("Cliente");
         let result = await cliente.findOne({ DNI: req.params.id });
         res.json(result);
@@ -30,7 +29,6 @@ const getClienteById = async (req, res) => {
 const getClientesAlquiler = async (req, res) => {
     if(!req.rateLimit) return;
     try{
-        // // let db = await connect();
         let cliente = db.collection("Alquiler");
 
         let result = await cliente.aggregate([
@@ -65,20 +63,36 @@ const addCliente = async (req, res) => {
         const dataSend = plainToClass(Clientes, req.body); 
         const validationErrors = await validate(dataSend);
 
-        if(validationErrors.length > 0) {
-            res.status(400).json({ message: "Error de validación", errors: validationErrors });
+        if (validationErrors.length > 0) {
+            const errorMessages = validationErrors.map(error => {
+                const field = error.property;
+                const description = dataSend.constructor.schema.properties[field].description;
+                return `${description}: ${Object.values(error.constraints).join(', ')}`;
+            });
+            res.status(400).json({ message: "Error de validación", errors: errorMessages });
             return;
         }
 
-        // let db = await connect();
         let cliente = db.collection("Cliente");
-        const values = [dataSend.nombre, dataSend.apellidos]
-        let result = await cliente.insertOne(values); // Usa req.body después de la validación
+        let dataArray = [dataSend.ID_Cliente, dataSend.Nombre, dataSend.Apellido, dataSend.DNI, dataSend.Direccion, dataSend.Telefono, dataSend.Email]
+        const document = {
+            ID_Cliente: dataArray[0],
+            Nombre: dataArray[1],
+            Apellido: dataArray[2],
+            DNI: dataArray[3],
+            Direccion: dataArray[4],
+            Telefono: dataArray[5],
+            Email: dataArray[6]
+        };
+        
+        const result = await cliente.insertOne(document);
         res.json(result);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
+
+
 
 
 export const methodsClientes = {
