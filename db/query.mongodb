@@ -3,10 +3,9 @@ db.createCollection("Cliente", {
     validator: {
         $jsonSchema: {
         bsonType: "object",
-        additionalProperties: false,
-        required: ["id", "Nombre", "Apellido", "DNI", "Direccion", "Telefono", "Email"],
+        required: ["ID_Cliente", "Nombre", "Apellido", "DNI", "Direccion", "Telefono", "Email"],
         properties: {
-            id: {
+            ID_Cliente: {
             bsonType: "int",
             description: "Campo obligatorio y debe ser un entero."
             },
@@ -23,7 +22,9 @@ db.createCollection("Cliente", {
             description: "Campo obligatorio y debe ser una cadena de texto."
             },
             Direccion: {
-            },
+                bsonType: "string",
+                description: "Campo opcional y debe ser una cadena de texto."
+            },            
             Telefono: {
             bsonType: "string",
             pattern: "3[0-9]{9}$",
