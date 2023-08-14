@@ -35,15 +35,21 @@
 
 ```json
 {
-​  "compilerOptions": {
-​  "target": "es6",
-​  "module": "ES6",
-​  "moduleResolution": "node",
-​   "outDir": "./controller",
-​   "esModuleInterop": true,
-​   "experimentalDecorators": true,
-​   "emitDecoratorMetadata": true
-​   }
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ES6",
+    "moduleResolution": "node",
+    "outDir": "./src/routes/validation/",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "./src/typescript/*.ts"
+  ],
+  "exclude": [
+    "src/routes/validation/*.js"
+  ]
 }
 ```
 `NOTA`:En caso de tener un error como este:
