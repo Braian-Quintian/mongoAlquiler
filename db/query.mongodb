@@ -3,11 +3,12 @@ db.createCollection("Cliente", {
     validator: {
         $jsonSchema: {
         bsonType: "object",
-        required: ["ID_Cliente", "Nombre", "Apellido", "DNI", "Direccion", "Telefono", "Email"],
+        required: ["id", "Nombre", "Apellido", "DNI", "Direccion", "Telefono", "Email"],
         properties: {
-            ID_Cliente: {
+            id: {
             bsonType: "int",
-            description: "Campo obligatorio y debe ser un entero."
+            description: "Campo obligatorio y debe ser un entero.",
+            message: "El campo id debe ser un entero."
             },
             Nombre: {
             bsonType: "string",
