@@ -2,11 +2,11 @@ import { Router } from 'express';
 import { methodsAlquileres } from '../routes/alquileres.routes.js';
 const router = Router();
 
-router.get('/', methodsAlquileres.getAlquileres);
-router.get('/inicio', methodsAlquileres.getAlquileresInicio);
-router.get('/total', methodsAlquileres.getTotalAlquileres);
-router.get('/entre', methodsAlquileres.getAlquileresEntre);
-router.get('/:id', methodsAlquileres.getAlquilerById);
+router.get('/',limitGet(), methodsAlquileres.getAlquileres);
+router.get('/inicio',limitGet(), methodsAlquileres.getAlquileresInicio);
+router.get('/total',limitGet(), methodsAlquileres.getTotalAlquileres);
+router.get('/entre',limitGet(), methodsAlquileres.getAlquileresEntre);
+router.get('/:id',limitGet(), methodsAlquileres.getAlquilerById);
 export {
     router
 }
