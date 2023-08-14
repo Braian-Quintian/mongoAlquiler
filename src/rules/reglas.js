@@ -21,7 +21,7 @@ const limitPost= () => {
         max: 10, // 10 requests,
         standardHeaders: true,
         legacyHeaders: false,
-        skip: (req, res) => req.headers["content-length"] > 1000 ? (res.status(413).send({ status: 413, message: "Content too large" }), true) : false
+        skip: (req, res) => req.headers["content-length"] > 400 ? (res.status(413).send({ status: 413, message: "Content too large" }), true) : false
     })
 }
 
