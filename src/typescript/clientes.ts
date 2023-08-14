@@ -1,11 +1,12 @@
 import { Expose } from 'class-transformer';
-import { IsString, IsEmail, IsDefined, Matches, IsNumber, MaxLength } from 'class-validator';
+import { IsString, IsEmail, IsDefined, Matches, IsNumber, MaxLength,Max } from 'class-validator';   
 
 export class Clientes {
 
     @Expose({name: "id-cliente"})
     @IsDefined({ message: () => { throw { status: 422, message: "The id-cliente is required" } } })
     @IsNumber({}, { message: () => { throw { status: 406, message: "The id-cliente must be a number" } } })
+    @Max(11, { message: () => { throw { status: 406, message: "The id-cliente cannot contain more than 11 characters"}}})
     ID_Cliente: number
 
     @Expose({name: 'nombre-cliente'})
