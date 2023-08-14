@@ -55,9 +55,10 @@
 
 `NOTA`:En caso de tener un error como este:
     ![error](/assets/img/error-env.png)
-    
+
 `SOLUCION`: Simplemente borra los espacios sobrantes.
-    ![solucion](/assets/img/solucion.png)
+
+![solucion](/assets/img/solucion.png)
 
 8. Ejecuta el comando `npm run tsc` para compilar el proyecto y se creará una carpeta llamada controller que contendra la validacion de toda la data.
     ![npm-run-tsc](/assets/img/npm-run-tsc.png)
