@@ -1,3 +1,5 @@
+import { plainToClass } from 'class-transformer';
+import {Automovil, AutomovilDisponible} from './validation/automovil.js';
 import { connect } from '../connection/connection.js';
 
 const getAutomoviles = async (req, res) => {
@@ -6,7 +8,6 @@ const getAutomoviles = async (req, res) => {
         let db = await connect();
         let alquiler = db.collection("Alquiler");
 
-        // Agregación para obtener los automóviles disponibles
         let result = await alquiler.aggregate([
             { $match: { Estado: "Disponible" } },
             {
@@ -28,7 +29,11 @@ const getAutomoviles = async (req, res) => {
             },
         ]).toArray();
 
-        res.json(result);
+        let data1 = plainToClass(Automovil, result, { excludeExtraneousValues: true });
+        const des = (result[0].automovil_disponible)
+        let data2 = plainToClass(AutomovilDisponible, des, { excludeExtraneousValues: true });
+        let listo = [{...data1[0],automovil_disponible: {...data2}}]
+        res.json(listo);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
