@@ -1,5 +1,5 @@
 import { Expose } from 'class-transformer';
-import { IsString, IsEmail, IsDefined, Matches, IsNumber, MaxLength,Max } from 'class-validator';   
+import { IsString, IsEmail, IsDefined, Matches, IsNumber, MaxLength, Max, ValidateIf, IsNotEmpty } from 'class-validator';   
 
 export class Clientes {
 
@@ -58,5 +58,47 @@ export class Clientes {
         this.Direccion = "Faker";
         this.Telefono = "0";
         this.Email = "Faker@faker.com";
+    }
+}
+
+export class ClientesDTO {
+
+    @Expose({ name: 'id' })
+    @ValidateIf(o => o["id-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El id-cliente no puede estar vacío' })
+    @IsDefined({ message: 'El id-cliente debe estar definido' })
+    ["id-cliente"]: number;
+
+    @Expose({ name: 'Nombre' })
+    @ValidateIf(o => o["nombre-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El nombre-cliente no puede estar vacío' })
+    @IsDefined({ message: 'El nombre-cliente debe estar definido' })
+    ["nombre-cliente"]: string;
+
+    @Expose({ name: 'Apellido' })
+    @ValidateIf(o => o["apellido-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El apellido-cliente no puede estar vacío' })
+    @IsDefined({ message: 'El apellido-cliente debe estar definido' })
+    ["apellido-cliente"]: string;
+
+    @Expose({ name: 'DNI' })
+    @ValidateIf(o => o["dni-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El dni-cliente no puede estar vacío' })
+    @IsDefined({ message: 'El dni-cliente debe estar definido' })
+    ["dni-cliente"]: string;
+
+    @Expose({name:'Telefono'})
+    @ValidateIf(o => o["telefono-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El telefono-cliente no puede estar vacío' })
+    @IsDefined({ message: 'El telefono-cliente debe estar definido' })
+    ["telefono-cliente"]: number;
+
+    @Expose({name:'Email'})
+    @ValidateIf(o => o["email-cliente"] !== undefined)
+    @IsNotEmpty({ message: 'El email-cliente no puede estar vacío' })
+    ["email-cliente"]: string;
+
+    constructor(data: Partial<ClientesDTO>) {
+        Object.assign(this, data);
     }
 }
