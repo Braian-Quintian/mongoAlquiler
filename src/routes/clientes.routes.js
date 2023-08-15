@@ -1,6 +1,6 @@
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
-import { Clientes } from './validation/clientes.js'
+import { Clientes, ClientesDTO } from './validation/clientes.js'
 import { connect } from '../connection/connection.js'
 const db = await connect();
 
@@ -9,7 +9,8 @@ const getClientes = async (req, res) => {
     try {
         let cliente = db.collection("Cliente");
         let result = await cliente.find().toArray();
-        res.json(result);
+        let data = plainToClass(ClientesDTO, result, { excludeExtraneousValues: true })  
+        res.json(data);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
