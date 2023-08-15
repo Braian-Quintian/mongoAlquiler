@@ -8,7 +8,6 @@ db.createCollection("Cliente", {
             id: {
             bsonType: "int",
             description: "Campo obligatorio y debe ser un entero.",
-            message: "El campo id debe ser un entero."
             },
             Nombre: {
             bsonType: "string",
@@ -28,7 +27,7 @@ db.createCollection("Cliente", {
             },            
             Telefono: {
             bsonType: "string",
-            pattern: "3[0-9]{9}$",
+            // pattern: "3[0-9]{9}$",
             description: "Campo obligatorio y debe ser una cadena de 8 dígitos numéricos."
             },
             Email: {
@@ -52,7 +51,7 @@ db.Cliente.insertMany([
         Email: "bquintianromero@gmail.com"
     }
 ]);
-
+use("db_endpoints_alquiler");
 db.Cliente.insertMany([
     {
         id: 1,
@@ -100,7 +99,7 @@ db.Cliente.insertMany([
         Email: "pedro@example.com"
     }
 ]);
-
+use("db_endpoints_alquiler");
 db.Automovil.insertMany([
     {
         id_: 1,
@@ -148,7 +147,7 @@ db.Automovil.insertMany([
         Precio_Diario: 60.00
     }
 ]);
-
+use("db_endpoints_alquiler");
 db.Alquiler.insertMany([
     {
         id: 1,
@@ -196,7 +195,7 @@ db.Alquiler.insertMany([
         Estado: "Activo"
     }    
 ]);
-
+use("db_endpoints_alquiler");
 db.Reserva.insertMany([
     {
         id: 1,
@@ -244,7 +243,7 @@ db.Reserva.insertMany([
         Estado: "Confirmada"
     }            
 ]);
-
+use("db_endpoints_alquiler");
 db.Sucursal.insertMany([
     {
         id: 1,
@@ -277,7 +276,7 @@ db.Sucursal.insertMany([
         Telefono: "5555555555"
     }            
 ]);
-
+use("db_endpoints_alquiler");
 db.Sucursal_Automovil.insertMany([
     {
         ID_Sucursal: 1,
@@ -305,7 +304,7 @@ db.Sucursal_Automovil.insertMany([
         Cantidad_Disponible: 3
     }    
 ]);
-
+use("db_endpoints_alquiler");
 db.Empleado.insertMany([
     {
         id: 1,
@@ -353,7 +352,7 @@ db.Empleado.insertMany([
         Cargo: "Técnico"
     }    
 ]);
-
+use("db_endpoints_alquiler");
 db.Registro_Entrega.insertMany([
     {
         id: 1,
@@ -396,7 +395,7 @@ db.Registro_Entrega.insertMany([
         Kilometraje_Entregado: 2400
     }    
 ]);
-
+use("db_endpoints_alquiler");
 db.Registro_Devolucion.insertMany([
     {
         id: 1,
@@ -447,10 +446,11 @@ db.Registro_Devolucion.insertMany([
 
 // Alquiler de Autos
 
-// 2
+// 2 TERMINADO
+use("db_endpoints_alquiler");
 db.Cliente.find();
 
-// 3
+// 3 TERMINADO
 use("db_campus_alquiler");
 db.getCollection("Alquiler").aggregate([
     { $match: {Estado: "Disponible"} },
@@ -473,7 +473,7 @@ db.getCollection("Alquiler").aggregate([
     }
 ]); 
 
-// 4
+// 4 
 use("db_campus_alquiler");
 db.getCollection("Alquiler").aggregate([
     {
